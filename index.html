@@ -1,11 +1,396 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=https://sites.google.com/site/tamjidrahat073" />
-    <title>Redirecting...</title>
-  </head>
-  <body>
-    <p>If you are not redirected, <a href="https://sites.google.com/site/tamjidrahat073">click here</a>. Sorry for the inconvenience.</p>
-  </body>
-</html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tamjid Al Rahat</title>
+  <meta name="description" content="Tamjid Al Rahat — Applied Scientist at AWS. Research in Agentic AI for Security, program repair, software security, and formal verification." />
 
+  <style>
+    :root {
+      --text: #1f2328;
+      --muted: #57606a;
+      --link: #0969da;
+      --border: #d0d7de;
+      --bg: #ffffff;
+      --accent-bg: #f6f8fa;
+      --maxw: 820px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ---------- Header ---------- */
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 6px 16px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    header h1 {
+      font-size: 28px;
+      margin: 0;
+      font-weight: 700;
+    }
+    header .role {
+      color: var(--muted);
+      font-size: 16px;
+    }
+    header .email {
+      color: var(--muted);
+      font-size: 14px;
+      margin-left: auto;
+    }
+    @media (max-width: 560px) {
+      header .email { margin-left: 0; flex-basis: 100%; }
+    }
+
+    /* ---------- Quick links ---------- */
+    .links {
+      margin: 18px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      border: 1px solid var(--link);
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--link);
+      background: #fff;
+      transition: background .15s ease, color .15s ease;
+    }
+    .links a::after {
+      content: "\2197"; /* ↗ */
+      font-size: 12px;
+      opacity: .7;
+    }
+    .links a:hover {
+      background: var(--link);
+      color: #fff;
+      text-decoration: none;
+    }
+    .links a:hover::after { opacity: 1; }
+
+    /* ---------- Profile photo ---------- */
+    .about-body {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 24px;
+    }
+    .about-text { flex: 1 1 320px; }
+    .about-text p:first-child { margin-top: 0; }
+    .photo {
+      flex: 0 0 180px;
+      width: 180px;
+    }
+    .photo img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: block;
+    }
+    @media (max-width: 560px) {
+      .photo { margin: 0 auto; }
+    }
+
+    /* ---------- Sections ---------- */
+    section { margin-top: 40px; }
+    h2 {
+      font-size: 20px;
+      margin: 0 0 14px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .research-areas {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .research-intro {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+    .research-areas li {
+      background: var(--accent-bg);
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* ---------- Education ---------- */
+    .edu {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .edu li {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 4px 16px;
+      padding: 10px 0;
+      border-bottom: 1px solid #eaeef2;
+    }
+    .edu li:last-child { border-bottom: none; }
+    .edu .degree { font-weight: 600; }
+    .edu .school { color: var(--muted); font-size: 14px; display: block; }
+    .edu .year { color: var(--muted); font-size: 14px; white-space: nowrap; }
+
+    /* ---------- Publications ---------- */
+    .pub {
+      margin: 0 0 20px;
+      padding-left: 16px;
+      border-left: 3px solid var(--border);
+    }
+    .pub .title { font-weight: 600; }
+    .pub .venue { color: var(--muted); font-size: 14px; }
+    .pub .authors { font-size: 14px; }
+    .pub .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #9a6700;
+      background: #fff8c5;
+      border: 1px solid #eac54f;
+      border-radius: 4px;
+      padding: 0 6px;
+      margin-left: 6px;
+    }
+    .pub .self { font-weight: 600; }
+
+    /* ---------- Footer ---------- */
+    footer {
+      margin-top: 56px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- ============ HEADER ============ -->
+    <header>
+      <h1>Tamjid Rahat</h1>
+      <span class="role">Applied Scientist, Amazon Web Services (AWS)</span>
+      <span class="email">tamjid [at] ucla.edu</span>
+    </header>
+
+    <!-- ============ QUICK LINKS ============
+         Update the CV href below with your Google Drive link. -->
+    <nav class="links">
+      <a href="https://www.linkedin.com/in/tamjidrahat" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://scholar.google.com/citations?user=LY1s3bsAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://drive.google.com/file/d/1EpXGgB2lQ9VPkEzo3HnhJoQtt4JAhdjI/view" target="_blank" rel="noopener">CV</a>
+    </nav>
+
+    <!-- ============ BIOGRAPHY ============ -->
+    <section id="about">
+      <h2>About</h2>
+      <div class="about-body">
+        <div class="about-text">
+          <p>
+            I am an Applied Scientist at
+            <a href="https://aws.amazon.com/" target="_blank" rel="noopener">Amazon Web Services (AWS)</a>,
+            working at the frontier of agentic AI for security. I focus on building LLM-agent
+            systems that autonomously detect and repair software vulnerabilities, pushing
+            <strong>automated program repair (APR)</strong> from research prototypes to
+            production-scale, high-fidelity remediation.
+          </p>
+          <p>
+            Previously, I built automated solutions for identifying logical flaws in security
+            protocols. My research on single sign-on (OAuth and OpenID Connect) uncovered
+            <a href="https://thehackernews.com/2022/05/high-severity-bug-reported-in-googles.html" target="_blank" rel="noopener">high-severity vulnerabilities</a>
+            in widely deployed software, including Google's authentication, contributing to 8+ CVEs.
+          </p>
+        </div>
+        <div class="photo">
+          <img src="res/bio-photo.jpg" alt="Tamjid Rahat" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESEARCH INTERESTS ============ -->
+    <section id="research">
+      <h2>Research Interests</h2>
+      <p class="research-intro">My research lies at the intersection of agentic AI and software security.</p>
+      <ul class="research-areas">
+        <li>Agentic AI for Security</li>
+        <li>Automated Program Repair (APR)</li>
+        <li>LLM Agents for Vulnerability Detection &amp; Remediation</li>
+        <li>Agent Evaluation: Validators &amp; LLM-as-a-Judge</li>
+        <li>Retrieval-Augmented Generation for Code</li>
+        <li>Human-in-the-Loop Agent Improvement</li>
+        <li>Security Protocol Analysis &amp; Formal Methods</li>
+      </ul>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section id="education">
+      <h2>Education</h2>
+      <ul class="edu">
+        <li>
+          <span>
+            <span class="degree">Ph.D., Computer Engineering</span>
+            <span class="school">University of California, Los Angeles (UCLA)</span>
+          </span>
+          <span class="year">2024</span>
+        </li>
+        <li>
+          <span>
+            <span class="degree">M.S., Computer Science</span>
+            <span class="school">University of Virginia</span>
+          </span>
+          <span class="year">2020</span>
+        </li>
+        <li>
+          <span>
+            <span class="degree">B.Sc., Computer Science and Engineering</span>
+            <span class="school">Bangladesh University of Engineering and Technology (BUET)</span>
+          </span>
+          <span class="year">2016</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ PUBLICATIONS ============
+         To add a new publication, copy one <div class="pub"> block below and edit it.
+         Wrap your own name in <span class="self">Tamjid Al Rahat</span>.
+         Add [PDF]/[Paper] links inside the .venue line as needed. -->
+    <section id="publications">
+      <h2>Publications</h2>
+
+      <div class="pub">
+        <div class="title">Automated Repair of OpenID Connect Programs</div>
+        <div class="authors"><span class="self">Tamjid Al Rahat</span>, Yanju Chen, Yu Feng, and Yuan Tian</div>
+        <div class="venue">
+          <a href="https://conf.researchr.org/home/ase-2025" target="_blank" rel="noopener">ASE 2025</a>
+          &mdash; 40th IEEE/ACM Int. Conference on Automated Software Engineering [to appear]
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="title">AuthSaber: Automated Safety Verification of OpenID Connect Programs</div>
+        <div class="authors"><span class="self">Tamjid Al Rahat</span>, Yu Feng, and Yuan Tian</div>
+        <div class="venue">
+          <a href="https://www.sigsac.org/ccs/CCS2024/" target="_blank" rel="noopener">CCS 2024</a>
+          &mdash; 31st ACM Conference on Computer and Communications Security
+          [<a href="https://drive.google.com/file/d/1yrDjZ5l-HTl76oMS2Vc06iFv06Fe2xSA/view?usp=sharing" target="_blank" rel="noopener">Paper</a>]
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="title">Using Program Knowledge Graph to Uncover Software Vulnerabilities<span class="badge">Poster</span></div>
+        <div class="authors">Mengjie Xie, <span class="self">Tamjid Al Rahat</span>, Wei Wang, Yuan Tian</div>
+        <div class="venue">
+          <a href="https://www.acsac.org/" target="_blank" rel="noopener">ACSAC 2023</a>
+          &mdash; Annual Computer Security Applications Conference
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="title">Cerberus: Query-driven Scalable Vulnerability Detection in OAuth Service Provider Implementations</div>
+        <div class="authors"><span class="self">Tamjid Al Rahat</span>, Yu Feng, and Yuan Tian</div>
+        <div class="venue">
+          <a href="https://www.sigsac.org/ccs/CCS2022/" target="_blank" rel="noopener">CCS 2022</a>
+          &mdash; 29th ACM Conference on Computer and Communications Security
+          [<a href="https://dl.acm.org/doi/10.1145/3548606.3559381" target="_blank" rel="noopener">Paper</a>]
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="title">ML-FEED: Machine Learning Framework for Efficient Exploit Detection<span class="badge">Best Paper Award</span></div>
+        <div class="authors">Tanujay Saha, <span class="self">Tamjid Al Rahat</span>, Najwa Aaraj, Yuan Tian, Niraj K. Jha</div>
+        <div class="venue">
+          <a href="http://www.sis.pitt.edu/lersais/conference/tps/2022/" target="_blank" rel="noopener">TPS 2022</a>
+          &mdash; IEEE International Conference on Trust, Privacy and Security
+          [<a href="https://ieeexplore.ieee.org/document/10063446" target="_blank" rel="noopener">Paper</a>]
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="title">Is Your Policy Compliant? A Deep Learning-based Empirical Study of Privacy Policies' Compliance with GDPR</div>
+        <div class="authors"><span class="self">Tamjid Al Rahat</span>, Minjun Long, and Yuan Tian</div>
+        <div class="venue">
+          <a href="https://arc.encs.concordia.ca/wpes22/index.html" target="_blank" rel="noopener">ACM WPES 2022</a>
+          &mdash; ACM Workshop on Privacy in the Electronic Society
+          [<a href="https://dl.acm.org/doi/10.1145/3559613.3563195" target="_blank" rel="noopener">Paper</a>]
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="title">Evaluating the Dedicated Short-range Communication for Connected Vehicles against Network Security Attacks</div>
+        <div class="authors">Tu Le, Ingy Elsayed-Aly, Weizhao Jin, Seunghan Ryu, Guy Verrier, <span class="self">Tamjid Al Rahat</span>, B. Brian Park, Yuan Tian</div>
+        <div class="venue">
+          <a href="https://vehits.scitevents.org/?y=2020" target="_blank" rel="noopener">VEHITS 2020</a>
+          &mdash; 6th Int. Conference on Vehicle Technology and Intelligent Transport Systems
+          [<a href="https://www.scitepress.org/Papers/2020/93555/93555.pdf" target="_blank" rel="noopener">Paper</a>]
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="title">OAuthLint: An Empirical Study on OAuth Bugs in Android Applications</div>
+        <div class="authors"><span class="self">Tamjid Al Rahat</span>, Yu Feng, and Yuan Tian</div>
+        <div class="venue">
+          <a href="https://2019.ase-conferences.org/" target="_blank" rel="noopener">ASE 2019</a>
+          &mdash; 34th IEEE/ACM Int. Conference on Automated Software Engineering
+          [<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8952200" target="_blank" rel="noopener">Paper</a>]
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="title">Maximizing Reverse k Nearest Neighbors for Trajectories (MaxRkNNT)</div>
+        <div class="authors"><span class="self">Tamjid Al Rahat</span>, Arif Arman, Mohammed Eunus Ali</div>
+        <div class="venue">
+          <a href="http://www.ict.griffith.edu.au/conferences/adc2018/" target="_blank" rel="noopener">ADC 2018</a>
+          &mdash; 29th Australasian Database Conference
+          [<a href="https://www.researchgate.net/publication/325213490_Maximizing_Reverse_k-Nearest_Neighbors_for_Trajectories" target="_blank" rel="noopener">Paper</a>]
+        </div>
+      </div>
+
+    </section>
+
+    <footer>
+      &ldquo;Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.&rdquo; &mdash; Thomas A. Edison
+    </footer>
+
+  </div>
+</body>
+</html>
