@@ -3,21 +3,48 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tamjid Al Rahat</title>
-  <meta name="description" content="Tamjid Al Rahat — Applied Scientist at AWS. Research in Agentic AI for Security, program repair, software security, and formal verification." />
+  <title>Tamjid Rahat</title>
+  <meta name="description" content="Tamjid Rahat — Applied Scientist at AWS. Research at the intersection of agentic AI and software security: automated program repair, LLM agents, and vulnerability detection." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="res/favicon.svg" />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Tamjid Rahat" />
+  <meta property="og:description" content="Applied Scientist at AWS — agentic AI for security, automated program repair, and vulnerability detection." />
+  <meta property="og:image" content="https://tamjidrahat.github.io/res/bio-photo.jpg" />
+  <meta property="og:url" content="https://tamjidrahat.github.io/" />
+  <meta name="twitter:card" content="summary" />
 
   <style>
     :root {
       --text: #1f2328;
       --muted: #57606a;
-      --link: #0969da;
+      --link: #0284c7;
+      --accent: #0ea5e9;
       --border: #d0d7de;
+      --divider: #eaeef2;
       --bg: #ffffff;
-      --accent-bg: #f6f8fa;
+      --accent-bg: #eff8fe;
       --maxw: 820px;
     }
 
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #e6edf3;
+        --muted: #9198a1;
+        --link: #38bdf8;
+        --accent: #38bdf8;
+        --border: #30363d;
+        --divider: #21262d;
+        --bg: #0d1117;
+        --accent-bg: #161b22;
+      }
+    }
+
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -36,6 +63,28 @@
 
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
+
+    /* ---------- Sticky top nav ---------- */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, .85);
+      -webkit-backdrop-filter: saturate(180%) blur(8px);
+      backdrop-filter: saturate(180%) blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .topnav-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      font-size: 14px;
+    }
+    .topnav a { color: var(--muted); font-weight: 600; }
+    .topnav a:hover { color: var(--link); text-decoration: none; }
 
     /* ---------- Header ---------- */
     header {
@@ -81,7 +130,7 @@
       font-size: 14px;
       font-weight: 600;
       color: var(--link);
-      background: #fff;
+      background: var(--bg);
       transition: background .15s ease, color .15s ease;
     }
     .links a::after {
@@ -122,12 +171,22 @@
     }
 
     /* ---------- Sections ---------- */
-    section { margin-top: 40px; }
+    section { margin-top: 40px; scroll-margin-top: 72px; }
     h2 {
       font-size: 20px;
       margin: 0 0 14px;
       padding-bottom: 6px;
       border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 44px;
+      height: 2px;
+      background: var(--accent);
     }
 
     .research-areas {
@@ -162,7 +221,7 @@
       justify-content: space-between;
       gap: 4px 16px;
       padding: 10px 0;
-      border-bottom: 1px solid #eaeef2;
+      border-bottom: 1px solid var(--divider);
     }
     .edu li:last-child { border-bottom: none; }
     .edu .degree { font-weight: 600; }
@@ -171,12 +230,34 @@
 
     /* ---------- Publications ---------- */
     .pub {
-      margin: 0 0 20px;
-      padding-left: 16px;
+      margin: 0 0 18px;
+      padding: 6px 12px 6px 16px;
       border-left: 3px solid var(--border);
+      border-radius: 0 6px 6px 0;
+      transition: border-color .15s ease, background .15s ease;
+    }
+    .pub:hover {
+      border-left-color: var(--accent);
+      background: var(--accent-bg);
     }
     .pub .title { font-weight: 600; }
     .pub .venue { color: var(--muted); font-size: 14px; }
+    .pub .venue a:first-of-type {
+      display: inline-block;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: .2px;
+      color: var(--accent);
+      background: var(--accent-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1px 7px;
+      margin-right: 3px;
+    }
+    .pub .venue a:first-of-type:hover {
+      border-color: var(--accent);
+      text-decoration: none;
+    }
     .pub .authors { font-size: 14px; }
     .pub .badge {
       display: inline-block;
@@ -194,16 +275,37 @@
     /* ---------- Footer ---------- */
     footer {
       margin-top: 56px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
+      padding: 10px 0 10px 18px;
+      border-left: 3px solid var(--accent);
       color: var(--muted);
-      font-size: 14px;
+      font-size: 15px;
       font-style: italic;
+    }
+
+    /* ---------- Dark-mode component tweaks ---------- */
+    @media (prefers-color-scheme: dark) {
+      .topnav { background: rgba(13, 17, 23, .85); }
+      .pub .badge {
+        color: #e3b341;
+        background: rgba(187, 128, 9, .15);
+        border-color: rgba(187, 128, 9, .4);
+      }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- ============ TOP NAV ============ -->
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#education">Education</a>
+      <a href="#publications">Publications</a>
+    </div>
+  </nav>
+
   <div class="wrap">
 
     <!-- ============ HEADER ============ -->
@@ -302,7 +404,8 @@
         <div class="authors"><span class="self">Tamjid Al Rahat</span>, Yanju Chen, Yu Feng, and Yuan Tian</div>
         <div class="venue">
           <a href="https://conf.researchr.org/home/ase-2025" target="_blank" rel="noopener">ASE 2025</a>
-          &mdash; 40th IEEE/ACM Int. Conference on Automated Software Engineering [to appear]
+          &mdash; 40th IEEE/ACM Int. Conference on Automated Software Engineering
+          [<a href="https://ieeexplore.ieee.org/document/11334406" target="_blank" rel="noopener">Paper</a>]
         </div>
       </div>
 
