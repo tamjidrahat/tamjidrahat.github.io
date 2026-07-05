@@ -23,11 +23,8 @@ jobs:
           working_directory: cv
           root_file: cv_tamjid.tex
 
-      - name: Rename output to cv.pdf
-        run: mv cv/cv_tamjid.pdf cv/cv.pdf
-
       - name: Commit generated PDF
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore(cv): rebuild CV PDF [skip ci]"
-          file_pattern: cv/cv.pdf
+          file_pattern: cv/cv_tamjid.pdf
