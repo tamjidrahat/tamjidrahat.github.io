@@ -1,0 +1,215 @@
+%=====================================================================
+%  Curriculum Vitae -- Tamjid Rahat
+%  Standalone LaTeX (no third-party class). Compile with pdfLaTeX.
+%  Font & layout mirror the moderncv "banking" style
+%  (TeX Gyre Pagella serif; Large bold section titles with a rule).
+%=====================================================================
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.85in]{geometry}
+
+% TeX Gyre Pagella (Palatino-like serif) -- the font used by moderncv banking.
+\usepackage{tgpagella}
+\usepackage{microtype}
+
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{0284C7}   % azure, matches tamjidrahat.github.io
+\definecolor{ink}{HTML}{1F2328}
+\definecolor{muted}{HTML}{57606A}
+
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{urlcolor=accent, linkcolor=accent}
+
+\color{ink}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+\linespread{1.1}
+
+% ---- Section headings: Large bold accent title with a solid rule beneath ----
+%      (banking style; small positive gap so the rule never touches the text) ----
+\titleformat{\section}
+  {\Large\bfseries\color{accent}}
+  {}{0em}{}
+  [{\vspace{1pt}{\color{accent!70}\titlerule[0.6pt]}}]
+\titlespacing*{\section}{0pt}{2.4ex}{1ex}
+
+% ---- Compact bullet lists with an accent marker ----
+\setlist[itemize]{leftmargin=1.35em, itemsep=3pt, topsep=3pt, parsep=0pt,
+  label=\textcolor{accent}{\footnotesize$\bullet$}}
+
+% ---- Entry header: bold title (left) + muted date (right) ----
+\newcommand{\cvhead}[2]{%
+  \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}%
+    \textbf{#1} & {\small\color{muted}#2}%
+  \end{tabular*}\\[2pt]}
+
+% ---- Publication venue tag & author self-highlight ----
+\newcommand{\venue}[1]{\textbf{\textcolor{accent}{#1}}}
+\newcommand{\me}{\underline{T. Al Rahat}}
+
+\begin{document}
+\pagestyle{empty}
+
+%=====================================================================
+%  Header
+%=====================================================================
+\begin{center}
+  {\fontsize{28}{32}\selectfont\bfseries Tamjid Rahat}\\[8pt]
+  \normalsize
+  \href{mailto:tamjid@ucla.edu}{tamjid@ucla.edu}\quad\textbullet\quad
+  \href{https://tamjidrahat.github.io}{tamjidrahat.github.io}\quad\textbullet\quad
+  \href{https://www.linkedin.com/in/tamjidrahat}{LinkedIn}\quad\textbullet\quad
+  \href{https://scholar.google.com/citations?user=LY1s3bsAAAAJ\&hl=en}{Google Scholar}
+\end{center}
+
+%=====================================================================
+%  Research Interests
+%=====================================================================
+\section{Research Interests}
+Agentic AI and software security; automated program repair (APR); LLM agents for
+vulnerability detection and remediation; agent evaluation (validators, LLM-as-a-judge);
+retrieval-augmented generation (RAG) for code; human-in-the-loop learning; formal methods
+and program analysis.
+
+%=====================================================================
+%  Education
+%=====================================================================
+\section{Education}
+\cvhead{University of California, Los Angeles (UCLA)}{2024}%
+Ph.D. in Computer Engineering \quad\textbullet\quad CGPA 4.0/4.0\\[1pt]
+\textit{Dissertation:} ``Automated Detection and Mitigation of Vulnerabilities in
+Single Sign-on Implementations.''
+
+\cvhead{University of Virginia, Charlottesville, VA}{2020}%
+M.S. in Computer Science \quad\textbullet\quad CGPA 3.90/4.0
+
+\cvhead{Bangladesh University of Engineering and Technology (BUET)}{2016}%
+B.Sc. in Computer Science and Engineering \quad\textbullet\quad CGPA 3.84/4.0
+
+%=====================================================================
+%  Experience
+%=====================================================================
+\section{Experience}
+\cvhead{Amazon Web Services (AWS), San Jose, CA}{06.2024 -- Present}%
+\textit{Applied Scientist, AWS Security}
+\begin{itemize}
+  \item Designed agentic systems for automated program repair (APR) that detect and fix
+        security vulnerabilities across heterogeneous services and codebases at production scale.
+  \item Shipped production code that improved the precision and recall of agent-generated fixes.
+  \item Developed LLM-as-a-judge evaluators to monitor agent output and collect feedback, and
+        used that feedback to improve the agents in the next iteration.
+  \item Built evaluation benchmarks and regression suites to keep fixes consistent across
+        different LLMs and agents.
+  \item Optimized the pipeline for scalability and token efficiency, and used
+        retrieval-augmented generation (RAG) and coding agents such as Claude and Kiro to
+        produce high-quality fixes in production.
+\end{itemize}
+
+\cvhead{United International University, Bangladesh}{06.2016 -- 07.2018}%
+\textit{Lecturer, Computer Science and Engineering}
+
+\cvhead{Stochastic Logic Limited, Bangladesh}{05.2016 -- 07.2018}%
+\textit{Quantitative Software Developer}
+
+%=====================================================================
+%  Publications
+%=====================================================================
+\section{Publications}
+\begin{itemize}[itemsep=5pt]
+  \item \venue{ASE 2025:} \me{}, Y. Chen, Y. Feng, and Y. Tian. ``Automated Repair of
+        OpenID Connect Programs.'' 40th IEEE/ACM Int. Conference on Automated Software
+        Engineering.
+
+  \item \venue{ACM CCS 2024:} \me{}, Y. Feng, and Y. Tian. ``AuthSaber: Automated Safety
+        Verification of OpenID Connect Programs.'' 31st ACM Conference on Computer and
+        Communications Security.
+
+  \item \venue{ACSAC 2023 [Poster]:} M. Xie, \me{}, W. Wang, and Y. Tian. ``Using Program
+        Knowledge Graph to Uncover Software Vulnerabilities.'' Annual Computer Security
+        Applications Conference.
+
+  \item \venue{ACM CCS 2022:} \me{}, Y. Feng, and Y. Tian. ``Cerberus: Query-driven Scalable
+        Vulnerability Detection in OAuth Service Provider Implementations.'' 29th ACM
+        Conference on Computer and Communications Security.
+
+  \item \venue{IEEE TPS 2022} [\textbf{Best Paper Award}]: T. Saha, \me{}, N. Aaraj, Y. Tian,
+        and N. Jha. ``ML-FEED: Machine Learning Framework for Efficient Exploit Detection.''
+        IEEE Int. Conference on Trust, Privacy and Security in Intelligent Systems and
+        Applications.
+
+  \item \venue{ACM WPES 2022:} \me{}, M. Long, and Y. Tian. ``Is Your Policy Compliant?
+        A Deep Learning-based Empirical Study of Privacy Policies' Compliance with GDPR.''
+        21st Workshop on Privacy in the Electronic Society.
+
+  \item \venue{VEHITS 2020:} T. Le, I. ElSayed-Aly, W. Jin, S. Ryu, G. Verrier, \me{},
+        B. Park, and Y. Tian. ``Evaluating the Dedicated Short-range Communication for
+        Connected Vehicles against Network Security Attacks.'' 6th Int. Conference on
+        Vehicle Technology and Intelligent Transport Systems.
+
+  \item \venue{IEEE/ACM ASE 2019:} \me{}, Y. Feng, and Y. Tian. ``OAuthLint: An Empirical
+        Study on OAuth Bugs in Android Applications.'' 34th IEEE/ACM Conference on Automated
+        Software Engineering.
+
+  \item \venue{ADC 2018:} \me{}, A. Arman, and M. E. Ali. ``Maximizing Reverse k-Nearest
+        Neighbors for Trajectories.'' 29th Australasian Database Conference.
+\end{itemize}
+
+%=====================================================================
+%  Technical Skills
+%=====================================================================
+\section{Technical Skills}
+\begin{itemize}
+  \item \textbf{AI / Agentic:} LLMs and frontier models, LLM agents, retrieval-augmented
+        generation (RAG), LLM-as-a-judge evaluation, agentic workflow orchestration,
+        coding agents (Claude Code, Kiro).
+  \item \textbf{Programming Languages:} Python, Java, C/C++, Racket, Intel x86 Assembly, MATLAB.
+  \item \textbf{Program Analysis:} WALA, Soot, Ghidra, Pysa, Clang, Z3, Tamarin-prover,
+        Rosette, FlowDroid.
+  \item \textbf{Machine Learning:} TensorFlow, Keras, PyTorch, scikit-learn.
+  \item \textbf{Web \& Data:} JavaScript, PHP, MySQL, SQLite, Oracle.
+  \item \textbf{Other:} \LaTeX{}, Bash, HTML, Lisp.
+\end{itemize}
+
+%=====================================================================
+%  Awards and Grants
+%=====================================================================
+\section{Awards and Grants}
+\begin{itemize}
+  \item \textbf{Google Research Paper Award}, 2023.
+  \item \textbf{Qualcomm Innovation Fellowship}, Finalist, 2023.
+  \item \textbf{Google Vulnerability Reward}, 2022 (\$5{,}000 for reporting security-critical bugs).
+  \item \textbf{Vulnerability Research Grant, Google}, 2022 (security research on Google Identity Services).
+  \item \textbf{Graduate Education Fellowship}, UCLA, 2022--2023.
+  \item \textbf{UVA Computer Science Fellowship}, University of Virginia, 2018--2019.
+  \item \textbf{Bug Bounty}, GoFundMe, 2019.
+  \item \textbf{Travel Grant}, Amazon Graduate Research Symposium, 2019.
+  \item \textbf{Dean's List Award} and \textbf{University Merit Scholarship}, BUET, 2012--2016.
+\end{itemize}
+
+%=====================================================================
+%  Academic Service
+%=====================================================================
+\section{Academic Service}
+\begin{itemize}
+  \item \textbf{Technical Program Committee:} USENIX Security '24 (posters),
+        IEEE S\&P '24 (posters), ACM CCS '22 (posters), IEEE S\&P '23 (posters).
+  \item \textbf{Session Chair:} ACM CCS '22, ACM WPES '22.
+  \item \textbf{Peer Reviewer:} CSF '21, ICSTE '22, JSS '22--23.
+  \item \textbf{External Peer Reviewer:} S\&P '21--24, CCS '21--24, USENIX '21--24,
+        WWW '22, SenSys '21--22.
+\end{itemize}
+
+%=====================================================================
+%  Media Coverage
+%=====================================================================
+\section{Media Coverage}
+\begin{itemize}
+  \item \textit{High-Severity Bug Reported in Google's OAuth Client Library for Java},
+        The Hacker News, May 2022.
+\end{itemize}
+
+\end{document}

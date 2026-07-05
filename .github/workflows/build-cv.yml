@@ -1,0 +1,33 @@
+name: Build CV
+
+on:
+  push:
+    paths:
+      - 'cv/cv_tamjid.tex'
+      - '.github/workflows/build-cv.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX (pdfLaTeX via latexmk, full TeX Live)
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: cv
+          root_file: cv_tamjid.tex
+
+      - name: Rename output to cv.pdf
+        run: mv cv/cv_tamjid.pdf cv/cv.pdf
+
+      - name: Commit generated PDF
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(cv): rebuild CV PDF [skip ci]"
+          file_pattern: cv/cv.pdf
